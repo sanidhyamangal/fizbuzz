@@ -11,6 +11,8 @@ python = "^3.10"
 yfinance = "^0.2.54"
 llama-index = "^0.12.19"
 pandas = "^2.2.3"
+llama-index-llms-ollama = "^0.5.2"
+llama-index-llms-openai = "^0.3.20"
 
 
 [tool.poetry.group.dev.dependencies]
