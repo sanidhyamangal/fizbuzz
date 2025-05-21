@@ -1,9 +1,4 @@
 repos:
-  - repo: https://github.com/pycqa/isort
-    rev: 5.12.0
-    hooks:
-      - id: isort
-        name: isort (python)
   - repo: https://github.com/astral-sh/ruff-pre-commit
     # Ruff version.
     rev: v0.8.0
@@ -11,6 +6,10 @@ repos:
       # Run the linter.
       - id: ruff
         args: [ --fix ]
+      # Run the sorting with isort.
+      - id: ruff
+        name: ruff-isort
+        args: ["--select", "I", "--fix"]
       # Run the formatter.
       - id: ruff-format
-  
+    
