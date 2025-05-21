@@ -12,4 +12,4 @@ repos:
         args: ["--select", "I", "--fix"]
       # Run the formatter.
       - id: ruff-format
-  
+    
