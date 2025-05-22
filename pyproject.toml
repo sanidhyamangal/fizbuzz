@@ -13,7 +13,7 @@ dependencies = [
 ]
 
 [project.scripts]
-yf-mcp-server = "fizbuzz.yahoo_finance_mcp.server:main"
+yf-mcp-server = "fizbuzz.yahoo_finance_mcp:main"
 
 [build-system]
 requires = ["hatchling"]
