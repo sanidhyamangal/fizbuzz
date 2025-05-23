@@ -9,15 +9,13 @@ import click
 import uvicorn
 from mcp.server.lowlevel import Server
 from mcp.server.sse import SseServerTransport
-
-# from mcp.server.fastmcp.utilities.logging import configure_logging, get_logger
 from mcp.types import TextContent, Tool
 from starlette.applications import Starlette
 from starlette.responses import Response
 from starlette.routing import Mount, Route
 
+from ..utils import configure_logging
 from .functions import StockInput, StockToolList, StockTools
-from .utils import configure_logging
 
 logger = getLogger(__name__)
 configure_logging(level="INFO")
