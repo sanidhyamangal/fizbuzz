@@ -10,19 +10,26 @@ Entire project works on two core principles.
 ### Project Structure
 ```sh
 .
+├── app.py
 ├── pyproject.toml
 ├── README.md
+├── sample.py
 ├── src
 │   └── fizbuzz
 │       ├── __init__.py
 │       ├── agents
+│       │   ├── __init__.py
+│       │   └── finance_agent.py
 │       ├── examples
 │       │   └── yahoo_finance_tool.ipynb
 │       ├── llms
-│       ├── llms.py
+│       ├── scripts
+│       │   └── test_agent.py
+│       ├── utils.py
 │       └── yahoo_finance_mcp
 │           ├── __init__.py
 │           ├── __main__.py
+│           ├── functions.py
 │           └── server.py
 └── uv.lock
 ```
@@ -39,8 +46,8 @@ You can refer to `.env.template` to setup `.env` file for configuring environ va
 
 ### Model and API Setup
 - The chatbot uses Ollama to run LLM models. Download and install it from [Ollama](https://ollama.com).
-- Download the [`mistral:7b`](https://ollama.com/library/mistral) model with:
-  `ollama pull mistral:7b`
+- Download the [`llama3.2:latest`](https://ollama.com/library/lamma3.2) model with:
+  `ollama pull llama3.2:latest`
 
 ### Running MCP Server
 To start MCP server you can run following command:
@@ -50,3 +57,10 @@ uv run yf-mcp-server
 
 This command will main function within, `server.py` to start MCP server. 
 >Entrypoint and command name could be modified within `pyproject.toml`
+
+### Running UI
+- To run UI, you can execute following command:
+```sh
+uv run streamlit run app.py
+```
+> If UI window doesn't pop automatically, please feel free to navigate to the URL mentioned in the console output
